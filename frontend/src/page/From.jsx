@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
+// vishalgodwar@gmail.com jugal786123
+
+import { useNavigate } from 'react-router-dom';
+
 function Form() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
 
+
+  // use Navigation
+  const navigate = useNavigate();
 
   //validation ............
   const [errors, setErrors] = useState({});  //this for validation purpose 
@@ -71,11 +78,11 @@ function Form() {
           if (res.status === 201) {
             alert("Check your form");
           } else {
-            console.log(res.user , 'user information'); // Assuming 'user' is part of the response
+            console.log(res, 'user information'); // Assuming 'user' is part of the response
             // Uncomment and set your local storage or navigate as needed
             // localStorage.setItem("usersdatatoken", res.result.token);
             // localStorage.setItem("usersdatatokens", res.result.name);
-            // navigate("/");
+            navigate("/", { replace: true }); 
           }
         } catch (error) {
           console.error("Error during fetch:", error);

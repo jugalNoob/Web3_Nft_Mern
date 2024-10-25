@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
 
@@ -9,7 +11,9 @@ function Login() {
 
 //jugal786
 
-//\
+  // use Navigation
+  const navigate = useNavigate();
+
 
   //validation ............
   const [errors, setErrors] = useState({});  //this for validation purpose 
@@ -78,7 +82,7 @@ function Login() {
             // Uncomment and set your local storage or navigate as needed
             // localStorage.setItem("usersdatatoken", res.result.token);
             // localStorage.setItem("usersdatatokens", res.result.name);
-            // navigate("/");
+            navigate("/", { replace: true }); 
           }
         } catch (error) {
           console.error("Error during fetch:", error);

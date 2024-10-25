@@ -67,7 +67,10 @@ function Nav() {
             
                 <center>
                 <NavLink to="/dash">Profile</NavLink>
+                <NavLink to="/forget">forget</NavLink>
                 <button onClick={handleLogout}>logout</button>
+           
+            
                 </center>
               </>
             ) : (

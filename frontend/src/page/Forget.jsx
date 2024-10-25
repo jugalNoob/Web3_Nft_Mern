@@ -52,6 +52,7 @@ setOpt(optss)
           } else {
           
             console.log(email, password);
+            navigate("/", { replace: true }); 
           }
         }
       }
